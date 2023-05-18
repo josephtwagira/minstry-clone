@@ -120,7 +120,7 @@
 
         * {
             text-align: center;
-            color: blue;
+            color: rgb(14, 14, 14);
             font-style: inherit;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -133,6 +133,26 @@
         .NAADS {
             border-radius: 40px;
         }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid ;
+            border-radius: 5px;
+        }
+
+        h10 {
+            text-emphasis: none;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        
     </style>
 </head>
 
@@ -212,6 +232,23 @@
         <p>Lugard Avenue, Entebbe Uganda.</p>
         <p>Email: info@agriculture</p>
     </div>
+    <div class="container">
+        <h10>Sign Up</h10>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+    </div>
+
 
     <footer>
         <p>&copy; 2023 All Rights Reserved. Sector portal</p>
