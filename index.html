@@ -10,6 +10,10 @@
             box-sizing: border-box;
         }
 
+        img {
+            border-radius: 5px;
+        }
+
         .flexible-container {
             display: flex;
             background-color: aquamarine;
@@ -20,12 +24,26 @@
 
         body {
             font-family: Verdana;
-            background-color: green;
             text-align: center;
             padding-left: 30px;
             font-size: medium;
+            font-family: sans-serif;
+            font-style: normal;
             margin: 8px;
             border-width: "100";
+            scroll-behavior: smooth;
+            background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
+            position: relative;
+            backdrop-filter: blur(150px);
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            background: tomato;
+            z-index: -1;
         }
 
         .item {
@@ -35,6 +53,14 @@
             padding: 8px;
             text-align: center;
             border: 100px;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+
+        }  
+        item::before {
+            content: "";
+            background-color: tomato;
+            z-index: -1;
         }
 
         .frank {
@@ -57,7 +83,8 @@
         footer {
             text-align: center;
             height: 400vh;
-            padding: 20px;
+            padding-top: 5px;
+            padding-bottom: 50px;
             text-emphasis-color: yellow;
             font-variant: small-caps;
             display: block;
@@ -121,8 +148,6 @@
         * {
             text-align: center;
             color: rgb(14, 14, 14);
-            font-style: inherit;
-            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
         .contacts {
@@ -138,7 +163,7 @@
             width: 300px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid ;
+            border: 1px solid;
             border-radius: 5px;
         }
 
@@ -152,7 +177,47 @@
             font-weight: bold;
         }
 
-        
+        form input[type="email"],
+        form input[type="password"] {
+            padding: 10px;
+            outline: none;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 12px 8px;
+        }
+
+        form input[type="submit"] {
+            background-color: aqua;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: bold;
+            transition: ease-in-out 2s;
+        }
+
+        h3 {
+            text-shadow: 2px 2px lime;
+        }
+
+        form input[type="submit"]:hover {
+            color: #fff;
+            opacity: .8
+        }
+
+        .content {
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: lightgreen;
+            width: 100%;
+            height: 100px;
+            padding: 10px 20px ;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -164,16 +229,20 @@
     </div>
 
     <img src="./images/frank.jpg" alt="minister" class="frank">
-    <h2>Welcome message from the Minister</h2>
-    <p> Welcome to the official website of the Ministry of Agriculture, Animal Industry and Fisheries which doubles as
-        the National Agricultural Sector Portal for the Republic of Uganda. Visitors are welcome to explore this
-        communication channel of the Ministry which complements stakeholder engagements, agricultural extensions,
-        publications and media features in showcasing work done within the guidance of the vision of the Vision of "A
-        Competitive, Proffitable and Sustainable Agricultural Sector" and Mission "To trnsform Subsistence Farming into
-        Commercial Agriculture."</p>
-    <h3>For God and my Country</h3>
-    <p>&#xae;Minister of Agriculture, Animal Industry and Fisheries</p>
-
+    <div class="content">
+        <h2>Welcome message from the Minister</h2>
+        <p> Welcome to the official website of the Ministry of Agriculture, Animal Industry and Fisheries which doubles
+            as
+            the National Agricultural Sector Portal for the Republic of Uganda. Visitors are welcome to explore this
+            communication channel of the Ministry which complements stakeholder engagements, agricultural extensions,
+            publications and media features in showcasing work done within the guidance of the vision of the Vision of
+            "A
+            Competitive, Proffitable and Sustainable Agricultural Sector" and Mission "To trnsform Subsistence Farming
+            into
+            Commercial Agriculture."</p>
+        <h3>For God and my Country</h3>
+        <p>&#xae;Minister of Agriculture, Animal Industry and Fisheries</p>
+    </div>
     <div class="item">
         <b>Ministry Vision</b>
         <p>"A competitive, profitable and sustainable agricultural sector"</p>
@@ -189,19 +258,19 @@
     <div class="animal">
         <img src="./images/kyozi.jpg" alt="kyozi">
         <h5>Directorate of Animal Resources (DAR)</h5>
-        <p>Objectives: "To support sustainable animal disease and vector control, market oriented animal production,
+        <p><b>Objectives:</b> "To support sustainable animal disease and vector control, market oriented animal production,
             food quality and safety; for improved food security and household income"</p>
     </div>
     <div class="maize">
         <img src="./images/maize.jpg" alt="maize">
         <h6>Directorate of Crop Resources(DCR)</h6>
-        <p>Objective: "To support sustainable, market oriented crop production, pest and diseases control, qualityand
+        <p><b>Objective:</b> "To support sustainable, market oriented crop production, pest and diseases control, qualityand
             safety of plants and plant products; for improved food security and household income."</p>
     </div>
     <div class="fish">
         <img src="./images/fish.jpg" alt="fish">
         <h6>Directory of Fisheries Resources (DFR)</h6>
-        <p>Objective:"To support sustainable, maket oriented fish production, management, development, control quality,
+        <p><b>Objective:</b>"To support sustainable, maket oriented fish production, management, development, control quality,
             control quality and safety of fisheries products; for improved food security and household income."</p>
     </div>
     <div class="projects">
@@ -213,13 +282,13 @@
 
     <div class="NARO">
         <img src="./images/NARO.png" alt="NARO" class="NARO">
-        <P>Mandate: "to coordinate, oversee and guide agricultural research in Uganda."Goal is "To enhance the
+        <P><b>Mandate:</b> "to coordinate, oversee and guide agricultural research in Uganda."Goal is "To enhance the
             contribution of the agriculturalresearch to sustainable agricultural productivity, sustainable agricultural
             productivity, sustained competitiveness, economic growth, food security and poverty eradication."</P>
     </div>
     <div class="NAADS">
         <img src="./images/NAADS.png" alt="NAADS" class="NAADS">
-        <p>Mandate: "To support and manage Agricultural Input Distribution chains, promote strategic commodity
+        <p><b>Mandate</b> "To support and manage Agricultural Input Distribution chains, promote strategic commodity
             interventions, agricultural chain development and farmer access to agricultural financing."</p>
     </div>
     <div class="phone">
@@ -230,18 +299,18 @@
         <p>Ministry of Agriculture, Animal Industry and Fisheries</p>
         <p>P.O Box 102, Entebbe Plot 16-18,</p>
         <p>Lugard Avenue, Entebbe Uganda.</p>
-        <p>Email: info@agriculture</p>
+        <p><strong> info@agriculture</strong></p>
     </div>
     <div class="container">
         <h10>Sign Up</h10>
         <form action="#" method="post">
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" placeholder="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" placeholder="password" id="password" name="password" required>
             </div>
             <div class="form-group">
                 <input type="submit" value="Sign Up">
@@ -249,10 +318,16 @@
         </form>
     </div>
 
-
+    <div class="footer">
     <footer>
         <p>&copy; 2023 All Rights Reserved. Sector portal</p>
+        <FooterSocialWrapper>
+            <div class="FooterSocialTitle">
+                <div class="FooterSocialItem">Focus Areas</div>
+            </div>
+            </FooterWrapper>
     </footer>
+    </div>
 </body>
 
 </html>
